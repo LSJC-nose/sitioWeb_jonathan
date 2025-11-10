@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentaho - Bases de Datos Analítica</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Pentaho BI</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="ejercicios.html">Ejercicios</a></li>
+                <li><a href="visualizacion.html">Visualización</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Desarrollo de Sitio Web para Bases de Datos Analítica con Pentaho</h1>
+                <p class="subtitle">Herramientas y técnicas de Business Intelligence para el análisis de datos</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>Vistazo General a Pentaho y Bases de Datos Analítica</h2>
+                
+                <div class="info-card">
+                    <h3>¿Qué es Pentaho?</h3>
+                    <p>
+                        Pentaho es una plataforma integral de Business Intelligence (BI) de código abierto que proporciona 
+                        herramientas completas para la integración, análisis y visualización de datos. Permite a las 
+                        organizaciones transformar datos en información estratégica para la toma de decisiones.
+                    </p>
+                    <p>
+                        Como herramienta de business intelligence, Pentaho facilita el desarrollo de análisis de datos 
+                        mediante su suite de productos que incluyen ETL (Extract, Transform, Load), generación de reportes, 
+                        visualización interactiva y modelado de datos multidimensionales.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Uso de Pentaho para el Desarrollo de Análisis de Datos</h3>
+                    <p>
+                        Pentaho permite desarrollar análisis de datos de manera eficiente mediante:
+                    </p>
+                    <ul>
+                        <li><strong>Pentaho Data Integration (PDI):</strong> Para la extracción, transformación y carga de datos desde múltiples fuentes.</li>
+                        <li><strong>Pentaho BA Server:</strong> Para la creación y publicación de reportes y dashboards interactivos.</li>
+                        <li><strong>Mondrian:</strong> Motor OLAP que permite realizar análisis multidimensionales complejos.</li>
+                        <li><strong>Report Designer:</strong> Herramienta para diseñar reportes profesionales y personalizados.</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Creación de Cubos OLAP con Pentaho</h3>
+                    
+                    <h4>Conceptos Fundamentales</h4>
+                    <p>
+                        Un cubo OLAP (Online Analytical Processing) es una estructura multidimensional que permite analizar 
+                        grandes volúmenes de datos desde diferentes perspectivas. Los cubos OLAP se componen de:
+                    </p>
+                    <ul>
+                        <li><strong>Dimensiones:</strong> Categorías de análisis (tiempo, geografía, producto, etc.)</li>
+                        <li><strong>Medidas:</strong> Valores numéricos que se analizan (ventas, cantidad, ingresos, etc.)</li>
+                        <li><strong>Hechos:</strong> Eventos o transacciones que contienen las medidas</li>
+                        <li><strong>Niveles:</strong> Jerarquías dentro de las dimensiones (año → mes → día)</li>
+                    </ul>
+
+                    <h4>Pasos para la Creación del Cubo</h4>
+                    <ol>
+                        <li><strong>Modelado del Esquema Estrella o Copo de Nieve:</strong> Diseñar la estructura de dimensiones y tabla de hechos.</li>
+                        <li><strong>Definición de Dimensiones:</strong> Establecer las dimensiones y sus jerarquías usando Schema Workbench.</li>
+                        <li><strong>Definición de Medidas:</strong> Especificar las medidas y sus funciones de agregación (suma, promedio, etc.).</li>
+                        <li><strong>Creación del Schema XML (Mondrian):</strong> Definir el esquema del cubo en formato XML.</li>
+                        <li><strong>Integración con la Base de Datos:</strong> Conectar el cubo con la base de datos relacional.</li>
+                        <li><strong>Validación y Pruebas:</strong> Verificar que el cubo funcione correctamente con consultas MDX.</li>
+                    </ol>
+
+                    <h4>Integración con Bases de Datos y Principales Operaciones</h4>
+                    <p>
+                        Pentaho se integra con múltiples bases de datos relacionales (MySQL, PostgreSQL, SQL Server, Oracle, etc.) 
+                        y permite realizar operaciones como:
+                    </p>
+                    <ul>
+                        <li><strong>Drill-down:</strong> Navegar de niveles agregados a niveles detallados</li>
+                        <li><strong>Roll-up:</strong> Consolidar datos de niveles detallados a niveles superiores</li>
+                        <li><strong>Slice:</strong> Filtrar el cubo por una dimensión específica</li>
+                        <li><strong>Dice:</strong> Seleccionar un subconjunto específico de dimensiones y medidas</li>
+                        <li><strong>Pivot:</strong> Reorganizar las dimensiones para ver los datos desde diferentes perspectivas</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>Flujos de Datos y Procesamiento en Pentaho</h3>
+                    <p>
+                        Pentaho Data Integration utiliza transformaciones y trabajos (jobs) para procesar datos:
+                    </p>
+                    <ul>
+                        <li><strong>Transformaciones (.ktr):</strong> Flujos de datos que definen cómo se extraen, transforman y cargan los datos.</li>
+                        <li><strong>Trabajos (.kjb):</strong> Orquestación de múltiples transformaciones y tareas relacionadas.</li>
+                        <li><strong>Pasos de Transformación:</strong> Componentes que realizan operaciones específicas (lectura, transformación, escritura).</li>
+                        <li><strong>Hops:</strong> Conexiones entre pasos que definen el flujo de datos.</li>
+                        <li><strong>Repositorio:</strong> Sistema centralizado para almacenar y gestionar transformaciones y trabajos.</li>
+                    </ul>
+                    <p>
+                        El procesamiento puede ser ejecutado de forma interactiva en Spoon (IDE de Pentaho) o de forma programática 
+                        mediante Kitchen/Pan para automatización de procesos ETL.
+                    </p>
+                </div>
+
+                <div class="info-card highlight">
+                    <h3>Objetivo del Proyecto</h3>
+                    <p>
+                        Este sitio web tiene como propósito proporcionar una presentación integral sobre Pentaho, incluyendo 
+                        explicaciones teóricas y ejercicios prácticos desarrollados durante la clase, demostrando la aplicación 
+                        práctica de esta herramienta en el análisis de datos y bases de datos analíticas.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Proyecto Pentaho - Bases de Datos Analítica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

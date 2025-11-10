@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Resultados - Pentaho</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Pentaho BI</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="ejercicios.html">Ejercicios</a></li>
+                <li><a href="visualizacion.html" class="active">Visualización</a></li>
+                <li><a href="creditos.html">Créditos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Visualización de Resultados Gráficos</h1>
+                <p class="subtitle">Presentación interactiva de resultados analíticos</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="intro-text">
+                    <p>
+                        Esta sección presenta gráficos generados a partir de los ejercicios realizados con Pentaho. 
+                        Los gráficos se han implementado utilizando HTML, CSS y JavaScript para demostrar la capacidad 
+                        de presentar resultados analíticos de manera visual e interactiva.
+                    </p>
+                </div>
+
+                <!-- Gráfico 1: Ventas por Producto -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>Ventas por Producto</h2>
+                        <p class="chart-description">
+                            Este gráfico muestra las ventas totales por producto, generado a partir del análisis del cubo OLAP.
+                        </p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="salesByProductChart"></canvas>
+                    </div>
+                    <div class="code-explanation">
+                        <h3>Explicación Técnica</h3>
+                        <p>
+                            Este gráfico de barras utiliza Chart.js para visualizar los datos. Los datos se obtienen de 
+                            consultas MDX ejecutadas sobre el cubo OLAP de Pentaho y se presentan en formato JSON.
+                        </p>
+                        <details class="code-block">
+                            <summary>Ver código JavaScript</summary>
+                            <pre><code>// Configuración del gráfico de barras
+const ctx = document.getElementById('salesByProductChart').getContext('2d');
+const salesChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Producto A', 'Producto B', 'Producto C', 'Producto D', 'Producto E'],
+        datasets: [{
+            label: 'Ventas (en miles)',
+            data: [120, 190, 300, 250, 180],
+            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});</code></pre>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Gráfico 2: Tendencia de Ventas Mensuales -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>Tendencia de Ventas Mensuales</h2>
+                        <p class="chart-description">
+                            Análisis de la tendencia de ventas a lo largo del tiempo, mostrando la evolución mes a mes.
+                        </p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="monthlyTrendChart"></canvas>
+                    </div>
+                    <div class="code-explanation">
+                        <h3>Explicación Técnica</h3>
+                        <p>
+                            Gráfico de líneas que muestra la evolución temporal de las ventas. Los datos provienen de 
+                            operaciones de roll-up y drill-down sobre la dimensión de tiempo del cubo OLAP.
+                        </p>
+                        <details class="code-block">
+                            <summary>Ver código JavaScript</summary>
+                            <pre><code>// Gráfico de líneas para tendencia temporal
+const trendCtx = document.getElementById('monthlyTrendChart').getContext('2d');
+const trendChart = new Chart(trendCtx, {
+    type: 'line',
+    data: {
+        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        datasets: [{
+            label: 'Ventas',
+            data: [65, 59, 80, 81, 56, 55, 40, 65, 80, 90, 100, 120],
+            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            tension: 0.4,
+            fill: true
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                display: true
+            }
+        }
+    }
+});</code></pre>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Gráfico 3: Distribución Regional -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>Distribución de Ventas por Región</h2>
+                        <p class="chart-description">
+                            Visualización de la distribución geográfica de las ventas utilizando un gráfico de sectores.
+                        </p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="regionalDistributionChart"></canvas>
+                    </div>
+                    <div class="code-explanation">
+                        <h3>Explicación Técnica</h3>
+                        <p>
+                            Gráfico circular (pie chart) que representa la proporción de ventas por región. Este tipo de 
+                            visualización es ideal para mostrar distribuciones y porcentajes relativos.
+                        </p>
+                        <details class="code-block">
+                            <summary>Ver código JavaScript</summary>
+                            <pre><code>// Gráfico de sectores para distribución regional
+const pieCtx = document.getElementById('regionalDistributionChart').getContext('2d');
+const pieChart = new Chart(pieCtx, {
+    type: 'pie',
+    data: {
+        labels: ['Norte', 'Sur', 'Este', 'Oeste', 'Centro'],
+        datasets: [{
+            data: [25, 20, 30, 15, 10],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)',
+                'rgba(75, 192, 192, 0.6)',
+                'rgba(153, 102, 255, 0.6)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'right'
+            }
+        }
+    }
+});</code></pre>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Gráfico 4: Comparación Año Anterior -->
+                <div class="chart-section">
+                    <div class="chart-header">
+                        <h2>Comparación de Ventas: Año Actual vs Año Anterior</h2>
+                        <p class="chart-description">
+                            Análisis comparativo entre períodos utilizando operaciones de análisis de series temporales del cubo OLAP.
+                        </p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="yearComparisonChart"></canvas>
+                    </div>
+                    <div class="code-explanation">
+                        <h3>Explicación Técnica</h3>
+                        <p>
+                            Gráfico de barras agrupadas que compara dos períodos. Los datos se obtienen mediante consultas 
+                            MDX que utilizan funciones de tiempo para comparar diferentes períodos.
+                        </p>
+                        <details class="code-block">
+                            <summary>Ver código JavaScript</summary>
+                            <pre><code>// Gráfico comparativo de períodos
+const compareCtx = document.getElementById('yearComparisonChart').getContext('2d');
+const compareChart = new Chart(compareCtx, {
+    type: 'bar',
+    data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [{
+            label: 'Año Actual',
+            data: [320, 450, 380, 510],
+            backgroundColor: 'rgba(54, 162, 235, 0.6)'
+        }, {
+            label: 'Año Anterior',
+            data: [280, 410, 350, 480],
+            backgroundColor: 'rgba(255, 99, 132, 0.6)'
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});</code></pre>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="info-card highlight">
+                    <h3>Integración con Pentaho</h3>
+                    <p>
+                        Estos gráficos demuestran cómo los resultados obtenidos de Pentaho (ya sea desde cubos OLAP, 
+                        reportes o transformaciones ETL) pueden ser integrados en aplicaciones web personalizadas para 
+                        crear experiencias de visualización interactivas y modernas.
+                    </p>
+                    <p>
+                        <strong>Flujo de datos típico:</strong>
+                    </p>
+                    <ol>
+                        <li>Pentaho ejecuta consultas MDX o transformaciones ETL</li>
+                        <li>Los resultados se exportan en formato JSON o CSV</li>
+                        <li>JavaScript carga los datos en el navegador</li>
+                        <li>Chart.js (u otra biblioteca) renderiza los gráficos interactivos</li>
+                    </ol>
+                </div>
+
+                <div class="info-box">
+                    <h3>📊 Bibliotecas de Visualización Utilizadas</h3>
+                    <ul>
+                        <li><strong>Chart.js:</strong> Biblioteca JavaScript de código abierto para crear gráficos interactivos</li>
+                        <li><strong>HTML5 Canvas:</strong> Elemento HTML utilizado como superficie de dibujo para los gráficos</li>
+                        <li><strong>CSS3:</strong> Para el diseño responsivo y el estilo visual de los gráficos</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Proyecto Pentaho - Bases de Datos Analítica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inicializar gráficos cuando la página esté cargada
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+        });
+
+        function initializeCharts() {
+            // Gráfico 1: Ventas por Producto
+            const salesCtx = document.getElementById('salesByProductChart');
+            if (salesCtx) {
+                new Chart(salesCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Producto A', 'Producto B', 'Producto C', 'Producto D', 'Producto E'],
+                        datasets: [{
+                            label: 'Ventas (en miles)',
+                            data: [120, 190, 300, 250, 180],
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Gráfico 2: Tendencia Mensual
+            const trendCtx = document.getElementById('monthlyTrendChart');
+            if (trendCtx) {
+                new Chart(trendCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                        datasets: [{
+                            label: 'Ventas',
+                            data: [65, 59, 80, 81, 56, 55, 40, 65, 80, 90, 100, 120],
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Gráfico 3: Distribución Regional
+            const pieCtx = document.getElementById('regionalDistributionChart');
+            if (pieCtx) {
+                new Chart(pieCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Norte', 'Sur', 'Este', 'Oeste', 'Centro'],
+                        datasets: [{
+                            data: [25, 20, 30, 15, 10],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)'
+                            ],
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                position: 'right'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Gráfico 4: Comparación Año Anterior
+            const compareCtx = document.getElementById('yearComparisonChart');
+            if (compareCtx) {
+                new Chart(compareCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                        datasets: [{
+                            label: 'Año Actual',
+                            data: [320, 450, 380, 510],
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                        }, {
+                            label: 'Año Anterior',
+                            data: [280, 410, 350, 480],
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+
+
