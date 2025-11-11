@@ -204,3 +204,33 @@ document.head.appendChild(style);
 // Funcionalidad adicional para mejorar la experiencia del usuario
 console.log('Sitio web de Pentaho cargado correctamente');
 
+// Toggle del menú en móviles (hamburguesa)
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (!navToggle || !navMenu) return;
+
+    navToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Cerrar el menú al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !navToggle.contains(e.target) && navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Asegurar que el menú se cierre al redimensionar a escritorio
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
+
