@@ -41,6 +41,111 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+/* Carrusel de imágenes: inicializador */
+document.addEventListener('DOMContentLoaded', function() {
+    const carousels = document.querySelectorAll('.carousel');
+
+    carousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        const indicators = carousel.querySelector('.carousel-indicators');
+        if (!track || slides.length === 0) return;
+
+        let current = 0;
+        let intervalId = null;
+        const autoplay = carousel.dataset.autoplay === 'true';
+        const interval = parseInt(carousel.dataset.interval, 10) || 4000;
+
+        // Crear indicadores
+        slides.forEach((_, idx) => {
+            const btn = document.createElement('button');
+            btn.setAttribute('aria-label', `Ir a la diapositiva ${idx + 1}`);
+            btn.setAttribute('role', 'tab');
+            btn.dataset.index = idx;
+            if (idx === 0) btn.setAttribute('aria-selected', 'true');
+            indicators.appendChild(btn);
+            btn.addEventListener('click', () => {
+                goToSlide(idx);
+            });
+        });
+
+        function update() {
+            const offset = -current * carousel.clientWidth;
+            track.style.transform = `translateX(${offset}px)`;
+            // actualizar indicadores
+            Array.from(indicators.children).forEach((b, i) => {
+                b.setAttribute('aria-selected', i === current ? 'true' : 'false');
+            });
+        }
+
+        function goToSlide(index) {
+            current = (index + slides.length) % slides.length;
+            update();
+            resetAutoplay();
+        }
+
+        function next() { goToSlide(current + 1); }
+        function prev() { goToSlide(current - 1); }
+
+        if (nextBtn) nextBtn.addEventListener('click', next);
+        if (prevBtn) prevBtn.addEventListener('click', prev);
+
+        // Autoplay
+        function startAutoplay() {
+            if (!autoplay) return;
+            stopAutoplay();
+            intervalId = setInterval(next, interval);
+        }
+
+        function stopAutoplay() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+        }
+
+        function resetAutoplay() {
+            stopAutoplay();
+            startAutoplay();
+        }
+
+        // Pausar al hover/foco
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+        carousel.addEventListener('focusin', stopAutoplay);
+        carousel.addEventListener('focusout', startAutoplay);
+
+        // Soporte teclado: flechas
+        carousel.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
+        });
+
+        // Ajustar al redimensionar
+        window.addEventListener('resize', function() {
+            update();
+        });
+
+        // Habilitar swipe simple para móviles
+        let startX = 0;
+        carousel.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        }, {passive: true});
+        carousel.addEventListener('touchend', function(e) {
+            const dx = (e.changedTouches[0].clientX - startX);
+            if (Math.abs(dx) > 40) {
+                if (dx < 0) next(); else prev();
+            }
+        });
+
+        // Inicializar
+        update();
+        startAutoplay();
+    });
+});
+
 // Función para resaltar código al hacer clic
 document.addEventListener('DOMContentLoaded', function() {
     const codeBlocks = document.querySelectorAll('pre code');
