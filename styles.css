@@ -125,6 +125,29 @@ body {
     opacity: 0.9;
 }
 
+/* Botón principal en la hero */
+.hero-actions {
+    margin-top: 1.25rem;
+}
+.hero .hero-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 0.85rem 1.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+.hero .hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+.hero .hero-btn:active {
+    transform: translateY(-1px) scale(0.995);
+}
+
 .hero-image {
     display: flex;
     justify-content: center;
@@ -290,6 +313,23 @@ body {
 
 .drive-btn:hover {
     background: linear-gradient(135deg, #be5a44, #e07a5f);
+}
+
+/* Estilo específico para el span 'btndocu' dentro del header (documentación) */
+.btndocu {
+    
+    display: inline-block;
+    background: rgba(118, 199, 98, 0.06);
+    color: var(--white);
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    font-weight: 400;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: none;
+}
+.btndocu:hover {
+    background: rgba(101, 160, 119, 0.12);
 }
 
 /* Sección de Gráficos */
@@ -787,5 +827,15 @@ img, video, iframe {
 @media (max-width: 768px) {
     .hero { min-height: 300px; padding: 2rem 0; }
     .hero h1 { font-size: 1.8rem; }
+}
+
+.btndocu {
+    font-size: 0.9rem;
+    color: var(--white);
+    text-decoration: none;
+}
+.drive-btn {
+    background: linear-gradient(135deg, #b1b47e, #be5a44);
+    margin-left: 0.5rem;
 }
 
