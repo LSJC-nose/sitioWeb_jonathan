@@ -18,8 +18,8 @@
                 <span class="bar"></span>
             </button>
             <ul id="main-nav" class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="ejercicios.html" class="active">Ejercicios</a></li>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="ejercicios.html">Ejercicios</a></li>
                 <li><a href="visualizacion.html">Visualización</a></li>
                 <li><a href="creditos.html">Créditos</a></li>
             </ul>
@@ -27,399 +27,45 @@
     </nav>
 
     <main class="main-content">
+       
+
         <section class="hero">
             <div class="container">
-                <h1>Ejercicios Prácticos Realizados</h1>
-                <p class="subtitle">Aplicación práctica de Pentaho en escenarios reales</p>
+                <h1>Explora datos con Pentaho</h1>
+                <p class="subtitle">Transforma, modela y visualiza información en una plataforma BI completa.</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/LSJC-nose/sitioWeb_jonathan" class="hero-btn">Ver repositorio</a>
+                    <a href="ejercicios.html" class="github-btn">Ver ejercicios</a>
+                </div>
             </div>
-        </section>
 
-        <section class="content-section">
-            <div class="container">
-                <div class="intro-text">
-                    <p>
-                        A continuación se presentan los ejercicios prácticos realizados a lo largo del curso.
-                        Cada ejercicio incluye una descripción detallada, instrucciones, y enlaces a los recursos
-                        alojados en Google Drive.
-                    </p>
+            <div class="carousel" data-autoplay="true" data-interval="4500" aria-roledescription="carrusel de imágenes">
+                <div class="carousel-track">
+                    <div class="carousel-slide"><img src="https://picsum.photos/id/1018/1600/900" alt="Visualización de datos 1"></div>
+                    <div class="carousel-slide"><img src="https://picsum.photos/id/1025/1600/900" alt="Visualización de datos 2"></div>
+                    <div class="carousel-slide"><img src="https://picsum.photos/id/1035/1600/900" alt="Visualización de datos 3"></div>
                 </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Ejercicio 1 - p1  </h2>
-                         <a href="https://docs.google.com/document/d/1UFXhFX6p2_ZIs1VJHuqdVwd4ErTVTstj/edit" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Fundamental</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                            Una empresa de supermercados en Managua, Nicaragua necesita analizar sus ventas junto con
-                            los detalles de los productos que comercializa.
-                        </p>
-
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>Archivos CSV con datos de ventas</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Generar una tabla resumen que muestre: Total gastado por cada cliente y ciudad con mayor
-                                volumen de ventas.</li>
-                        </ul>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1KUGPrQLM4j2cz_PFSj6S3qw_gswo_laZ?usp=sharing" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> La carpeta contiene el schema XML, scripts SQL y documentación.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 8</h2>
-                        <a href="https://docs.google.com/document/d/1ENE1SiIOAbPurXJItF3syTcvmBhGm6_L/edit" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                            El objetivo es fusionar ventas con productos para calcular el total de venta por producto y fecha, y luego ampliar el análisis integrando clientes para obtener un resumen de gasto por cliente y la ciudad con mayor volumen de ventas, con preguntas de reflexión sobre los productos y clientes de mayor facturación.
-                        </p>
-
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>clientes.csv</li>
-                            <li>productos.csv</li>
-                            <li>ventas.csv</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Se espera mostrar en un CSV, En qué ciudad se vendió más café y qué cliente gastó más en ese producto?.</li>
-                           
-                        </ul>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1cSQjqBU4wZ5erYNooXm-OOb8rhgGuwWQ?hl=es-419" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye definiciones de reportes, consultas MDX y capturas del dashboard.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 12</h2>
-                        <a href="https://drive.google.com/file/d/1eV6jeIFE994uUFl7aSEl0jycp7ETT6Uc/view" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                            simular un cubo OLAP usando solo Pentaho
-                            Data Integration (versión 8) y un archivo CSV, sin necesidad de bases de datos ni
-                            complementos de Pentaho, se hace la simulacion OLAP clave:
-                        </p>
-                       <p>✅Drill down</p>
-                       <p>✅Roll up</p> 
-                       <p>✅Slice</p>
-                       <p>✅Dice</p>  
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>ventas.csv</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>explicaciones del uso de cada operacion OLAP</li>
-                        </ul>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/16mg12qksj_M4V25KJ_glnp9BauTpLvWu?hl=es-419" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 15</h2>
-                        <a href="https://docs.google.com/presentation/d/1MU0PLErCbeAp9lrl6pHlrvMigDgCAg9a/edit?slide=id.p1#slide=id.p1" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                            Construir un flujo ETL en Spoon que lea un fact (ventas) y 3 dimensiones (producto, cliente,
-                            tienda), haga joins entre ellos (sin BD) y genere agregados por año, mes y categoría de
-                            producto.
-                        </p>
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>Archivos CSV con datos de ventas</li>
-                            <li>Configuración de base de datos</li>
-                            <li>Parámetros de configuración</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Salidas con Text file output con formato excel </li>
-                        </ul>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1TA76xYnel2ShF40lIl5F9xJYXjixJsUk?usp=sharing" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 16</h2>
-                        <a href="https://docs.google.com/document/d/1_7sJFz1DcGTpihhIPkdOtisgAuBohHr0/edit" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                            flujo ETL en Spoon que lea un fact (ventas) y 3 dimensiones (producto, cliente, tienda), haga joins entre ellos (sin BD) y genere agregados por año, mes y categoría de producto.
-
-                        </p>
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>FactSales.csv</li>
-                            <li>DimProduct.csv</li>
-                            <li>DimCustomer.csv</li>
-                            <li>DimStore.csv</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Archivos CSV con ventas por año, por año-mes y por año + categoría, útiles para análisis de tendencias y desempeño por producto.</li>
-                        </ul>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1TA76xYnel2ShF40lIl5F9xJYXjixJsUk?usp=sharing" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 19</h2>
-                        <a href="https://docs.google.com/document/d/1P8RmvQuvRKH22Ud0SUe4x6dB08bl2ZQu/edit" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                            flujo ETL en Spoon que lea un fact (ventas) y 3 dimensiones (producto, cliente, tienda), haga joins entre ellos (sin BD) y genere agregados por año, mes y categoría de producto.
-
-                        </p>
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>FactSales.csv</li>
-                            <li>DimProduct.csv</li>
-                            <li>DimCustomer.csv</li>
-                            <li>DimStore.csv</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Archivos CSV con ventas por año, por año-mes y por año + categoría, útiles para análisis de tendencias y desempeño por producto.</li>
-                        </ul>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1TA76xYnel2ShF40lIl5F9xJYXjixJsUk?usp=sharing" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 20</h2>
-                        <a href="docs.google.com/document/d/1wM3g-rFAV-zmH_gOK67MPVntRlDC1U4X/edit?usp=drive_web&ouid=112176096827255675574&rtpof=true" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                           Guía para poblar datos en una base de datos HSQLDB 
-                           local a partir de archivos CSV usando Spoon (Pentaho Data
-                            Integration) y luego te propone consultas y prácticas para 
-                            analizar ventas y dimensiones.
-                        </p>
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>Archivos CSV con datos de (productos, store, date)</li>
-                            <li>Tabla de Hechos (sales_fact)</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Se espera que el conteo de filas insertadas coincida con las cifras de tus CSV</li>
-                            <li>En particular, para la tabla de hechos (sales_fact) se esperarán 20 filas insertadas, si ese es el tamaño del dataset de ventas.</li>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1TA76xYnel2ShF40lIl5F9xJYXjixJsUk?hl=es-419" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div> 
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 26</h2>
-                        <a href="https://docs.google.com/document/d/18phxL0vNDuiCZDgFDPspeHVZViVlJ6yP/edit" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                           Guía para poblar datos en una base de datos HSQLDB 
-                           local a partir de archivos CSV usando Spoon (Pentaho Data
-                            Integration) y luego te propone consultas y prácticas para 
-                            analizar ventas y dimensiones.
-                        </p>
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>Archivos CSV con datos de (productos, store, date)</li>
-                            <li>Tabla de Hechos (sales_fact)</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Se espera que el conteo de filas insertadas coincida con las cifras de tus CSV</li>
-                            <li>En particular, para la tabla de hechos (sales_fact) se esperarán 20 filas insertadas, si ese es el tamaño del dataset de ventas.</li>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1TA76xYnel2ShF40lIl5F9xJYXjixJsUk?hl=es-419" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div> 
-
-
-                <div class="exercise-card">
-                    <div class="exercise-header">
-                        <h2>Recurso educativo 30</h2>
-                        <a href="https://docs.google.com/document/d/1TGjDz_ir91KxbjwZtL0Lb7UAydLfi63C/edit" class="github-btn drive-btn" target="_blank">
-                                <span class="btndocu">Ver documentación</span>
-                            </a>
-                        <span class="badge">Avanzado</span>
-                    </div>
-                    <div class="exercise-content">
-                        <h3>¿Qué hace el ejercicio?</h3>
-                        <p>
-                           Guía para poblar datos en una base de datos HSQLDB 
-                           local a partir de archivos CSV usando Spoon (Pentaho Data
-                            Integration) y luego te propone consultas y prácticas para 
-                            analizar ventas y dimensiones.
-                        </p>
-                        <h3>Entradas:</h3>
-                        <ul>
-                            <li>Archivos CSV con datos de (productos, store, date)</li>
-                            <li>Tabla de Hechos (sales_fact)</li>
-                        </ul>
-
-                        <h3>Salidas esperadas:</h3>
-                        <ul>
-                            <li>Se espera que el conteo de filas insertadas coincida con las cifras de tus CSV</li>
-                            <li>En particular, para la tabla de hechos (sales_fact) se esperarán 20 filas insertadas, si ese es el tamaño del dataset de ventas.</li>
-
-                        <div class="github-link">
-                            <a href="https://drive.google.com/drive/folders/1TA76xYnel2ShF40lIl5F9xJYXjixJsUk?hl=es-419" class="github-btn drive-btn" target="_blank">
-                                <span>Ver ejercicio</span>
-                            </a>
-                            <p class="github-note">
-                                <strong>Nota:</strong> Incluye job principal, transformaciones y scripts de automatización.
-                            </p>
-                        </div>
-                    </div>
-                </div> 
-
-                
-              
-
-                <div class="info-box">
-                    <h3>Como Utilizar los Recursos</h3>
-                    <ol>
-                        <li><strong>Accede directamente:</strong> Haz clic en "Ver en Drive" para abrir la carpeta.</li>
-                        <li><strong>Descarga o visualiza:</strong> Todos los archivos están listos para usar.</li>
-                        <li><strong>Pentaho requerido:</strong> Asegúrate de tener Pentaho Data Integration instalado.</li>
-                    </ol>
-                </div>
-
-                <div class="info-card highlight">
-                    <h3>Repositorio Principal</h3>
-                    <p>
-                        Todos los ejercicios están organizados en carpetas dentro de Google Drive.
-                    </p>
-                    <a href="https://drive.google.com/drive/folders/1nGcVoi31GycA8Nup6nO0iIbQ-imF08sf?usp=sharing" class="github-btn large drive-btn" target="_blank">
-                        <span>Acceder al Repositorio Completo</span>
-                    </a>
-                </div>
+                <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+                <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+                <div class="carousel-indicators" role="tablist" aria-label="Indicadores del carrusel"></div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Proyecto Pentaho - Bases de Datos Analítica. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+     <section id="inicio" class="intro container">
+            <h2>Página de Inicio: Vistazo General a Pentaho y Bases de Datos Analítica</h2>
+            <p><strong>Descripción general de Pentaho:</strong> Pentaho es una plataforma de Business Intelligence (BI) que ofrece herramientas para integración de datos, análisis, reporting y visualización. Permite extraer, transformar y cargar (ETL) datos, modelarlos y crear informes y cuadros de mando para apoyar la toma de decisiones.</p>
+
+            <p><strong>Uso de Pentaho para desarrollo de análisis de datos:</strong> Pentaho se utiliza para diseñar procesos ETL, preparar datos para análisis, crear modelos analíticos y desplegar informes interactivos. Su suite incluye herramientas como Pentaho Data Integration (PDI) para flujos ETL y Pentaho Server para la publicación y consumo de contenido analítico.</p>
+
+            <h3>Introducción a la creación de cubos OLAP utilizando Pentaho</h3>
+            <ul>
+                <li><strong>Conceptos fundamentales:</strong> Un cubo OLAP organiza datos multidimensionales en dimensiones (por ejemplo, tiempo, producto, región) y medidas (por ejemplo, ventas, cantidad). Permite operaciones como drill-down, roll-up, slice y dice para explorar los datos desde distintas perspectivas.</li>
+                <li><strong>Pasos para la creación del cubo:</strong> 1) Definir fuentes de datos y preparar los datos con ETL; 2) Diseñar dimensiones y jerarquías; 3) Definir las medidas y agregaciones; 4) Crear el modelo OLAP (por ejemplo con Mondrian u otra capa OLAP integrada en Pentaho); 5) Desplegar y probar el cubo para consultas analíticas.</li>
+                <li><strong>Integración con bases de datos y principales operaciones:</strong> Pentaho se integra con bases de datos relacionales (MySQL, PostgreSQL, SQL Server, Oracle) y almacenes de datos. Las operaciones habituales incluyen extracción SELECT, transformaciones (joins, cálculos, limpieza) y carga en tablas de hechos/dimensiones o en estructuras optimizadas para OLAP.</li>
+                <li><strong>Flujos de datos y procesamiento en Pentaho:</strong> Los flujos de datos se diseñan con Pentaho Data Integration (Spoon), creando transformaciones y jobs que automatizan la ingestión, limpieza, enriquecimiento y carga de datos. PDI soporta pasos de entrada/salida, filtrado, mapeo, agregaciones y llamadas a procedimientos, permitiendo orquestar el pipeline completo desde la fuente hasta el cubo/visualización.</li>
+            </ul>
+        </section>
 
     <script src="script.js"></script>
 </body>

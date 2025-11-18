@@ -839,3 +839,101 @@ img, video, iframe {
     margin-left: 0.5rem;
 }
 
+/* ==========================
+   Estilos modernos para la sección de inicio
+   ========================== */
+#inicio {
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(250,247,242,0.95));
+    padding: 2.25rem;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(20,30,20,0.06);
+    border: 1px solid rgba(42,59,46,0.06);
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+#inicio h2 {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 56px;
+}
+
+#inicio h2::before {
+    content: "📊";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+}
+
+#inicio > p {
+    color: var(--text-light);
+    margin-bottom: 0.9rem;
+    line-height: 1.6;
+}
+
+#inicio h3 {
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    margin-bottom: 0.6rem;
+}
+
+#inicio ul {
+    display: grid;
+    gap: 0.9rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#inicio ul li {
+    background: var(--white);
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(42,59,46,0.04);
+    border-left: 4px solid var(--secondary-color);
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+#inicio ul li strong {
+    color: var(--primary-color);
+}
+
+#inicio ul li:hover {
+    transform: translateY(-4px);
+    transition: transform 0.25s ease;
+}
+
+/* Asegurar que los elementos textuales ocupen la columna izquierda y la lista la derecha */
+#inicio > h2,
+#inicio > p,
+#inicio > h3 {
+    grid-column: 1 / 2;
+}
+
+#inicio > ul {
+    grid-column: 2 / 3;
+}
+
+@media (max-width: 900px) {
+    #inicio {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    #inicio > h2,
+    #inicio > p,
+    #inicio > h3,
+    #inicio > ul {
+        grid-column: 1 / -1;
+    }
+    #inicio h2 { padding-left: 44px; }
+    #inicio h2::before { left: 10px; font-size: 1.6rem; }
+}
+
